@@ -1,0 +1,43 @@
+<h1 class="mb-4">AI Risk Alerts</h1>
+<div class="card mb-4">
+  <div class="card-header bg-danger text-white">WARNING!</div>
+  <div class="card-body">
+    <p class="mb-4">
+      <b>Warning:</b> There may be a potential system issue or a malfunctioning sensor. Immediate inspection required! <br>
+      Please check the affected sensors and system components as soon as possible to ensure accurate data and avoid further issues.    </p>
+
+    <!-- Sensor Data Table -->
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover table-alert">
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>Temperature</th>
+          <th>pH</th>
+          <th>Flow</th>
+          <th>Turbidity</th>
+          <th>Latitude</th>
+          <th>Longitude</th>
+          <th>Timestamp</th>
+          <th>Prediction</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let data of sensorData">
+          <td>{{ data.id }}</td>
+          <td>{{ data.temperature }}</td>
+          <td>{{ data.ph }}</td>
+          <td>{{ data.flow }}</td>
+          <td>{{ data.turbidity }}</td>
+          <td>{{ data.latitude }}</td>
+          <td>{{ data.longitude }}</td>
+          <td>{{ data.timestamp }}</td>
+          <td id="prediction">
+            <span class="badge bg-danger">Anomaly</span>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

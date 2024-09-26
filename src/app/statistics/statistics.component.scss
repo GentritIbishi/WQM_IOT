@@ -1,0 +1,90 @@
+.statistics-container {
+  padding: 20px;
+}
+
+.location-buttons {
+  margin-bottom: 20px;
+  text-align: center;
+
+  .location-btn {
+    background-color: #f8f9fa;
+    border: 1px solid #6c757d;
+    color: #343a40;
+    margin: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #e2e6ea;
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+    }
+  }
+}
+
+.content-area {
+  display: flex;
+  justify-content: space-between; /* Align the charts side by side */
+  gap: 20px; /* Space between the charts */
+  flex-wrap: nowrap; /* Prevent wrapping to keep charts inline */
+
+  .chart-container {
+    padding: 10px;
+    border: 1px solid #6c757d;
+    border-radius: 5px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative; /* For centering the "No Data" message */
+    flex: 1; /* Allow both charts to take equal space initially */
+
+    h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: #343a40;
+    }
+
+    canvas {
+      max-height: 400px; /* Adjust to ensure enough space for the charts */
+      width: 100%;
+      height: 100%;
+    }
+
+    .no-data-message {
+      color: #dc3545; /* Red color for the no data message */
+      font-size: 1.2rem;
+      position: absolute; /* Absolute positioning for centering */
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); /* Center the message */
+    }
+  }
+
+  /* Pie Chart Section */
+  .pie-chart-container {
+    max-width: 40%; /* Restrict the pie chart's max width */
+    flex: 0 0 40%; /* Fix the pie chart to take 40% of the space */
+  }
+
+  /* Line Chart Section */
+  .line-chart-container {
+    max-width: 60%; /* Allow the line chart to take more space */
+    flex: 0 0 60%; /* Fix the line chart to take 60% of the space */
+  }
+}
+
+@media (max-width: 768px) {
+  .content-area {
+    flex-direction: column; /* Stack the charts vertically on smaller screens */
+  }
+
+  .chart-container {
+    max-width: 100%;
+    margin-bottom: 20px; /* Add spacing between stacked charts */
+  }
+}

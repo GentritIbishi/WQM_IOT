@@ -1,0 +1,129 @@
+.dashboard-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px;
+  background-color: #f9f9f9; /* Light background for contrast */
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Adds space between the cards */
+  width: 35%;
+}
+
+.right-column {
+  width: 60%;
+  height: 100%;
+  position: relative;
+  margin: 20px 0;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  padding: 20px;
+}
+
+.right-column > div {
+  height: 400px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.dashboard-card {
+  width: 100%;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Stronger shadow for better visual hierarchy */
+  background-color: #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition on hover */
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px); /* Slight lift effect on hover */
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15); /* Larger shadow on hover */
+}
+
+.centered-card {
+  text-align: center;
+}
+
+.mat-card-title {
+  font-size: 1.5em;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.chart-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+
+#cAlert {
+  cursor: pointer;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+#cAlert:hover {
+  background-color: #f1c40f; /* Highlight on hover */
+}
+
+.two {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .dashboard-wrapper {
+    flex-direction: column;
+  }
+
+  .right-column {
+    width: 100%;
+    height: 300px;
+  }
+
+  .left-column {
+    width: 100%;
+  }
+
+  .dashboard-card {
+    margin-bottom: 20px;
+  }
+}
+
+/* Typography improvements */
+h1 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 40px;
+}
+
+p, h2 {
+  font-family: 'Roboto', sans-serif;
+  color: #555;
+}
+
+/* Button improvements */
+button#closeButton {
+  background: none;
+  border: none;
+  font-size: 1.2em;
+  color: #e74c3c;
+  cursor: pointer;
+}
+
+button#closeButton:hover {
+  color: #c0392b;
+}
+

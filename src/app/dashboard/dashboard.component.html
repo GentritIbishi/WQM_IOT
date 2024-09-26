@@ -1,0 +1,48 @@
+<h1>Dashboard Overview</h1>
+
+<!-- Alerts Section -->
+<div *ngFor="let alert of alerts; let i = index">
+  <div id="cAlert" class="alert alert-warning alert-dismissible fade show" role="alert" (click)="alert.onClick()">
+    {{ alert.message }}
+    <button id="closeButton" type="button" class="close" aria-label="Close" (click)="closeAlert(i)">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+</div>
+
+<div class="dashboard-wrapper">
+  <div class="left-column">
+   <div class="two">
+     <!-- Total Sensors Card -->
+     <mat-card class="dashboard-card centered-card">
+       <mat-card-title>Active Sensors: {{activeSensors}}</mat-card-title>
+     </mat-card>
+     <!-- Total Sensors Card -->
+     <mat-card class="dashboard-card centered-card">
+       <mat-card-title>Total Locations: {{totalLocations}}</mat-card-title>
+     </mat-card>
+   </div>
+
+    <!-- Water Purity Card -->
+    <mat-card class="dashboard-card centered-card">
+      <mat-card-title>Water Purity</mat-card-title>
+      <div class="chart-wrapper">
+        <canvas baseChart
+                [data]="doughnutChartData"
+                [type]="doughnutChartType">
+        </canvas>
+      </div>
+    </mat-card>
+  </div>
+
+  <!-- Map with Sensor Locations -->
+  <div class="right-column">
+    <div leaflet
+         [leafletOptions]="mapOptions"
+         [leafletZoom]="mapZoom"
+         [leafletCenter]="mapCenter"
+         [leafletLayers]="mapMarkers"
+         (leafletMapReady)="onMapReady($event)">
+    </div>
+  </div>
+</div>

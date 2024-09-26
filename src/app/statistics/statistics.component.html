@@ -1,0 +1,46 @@
+<h1>Statistics</h1>
+<div class="card-body">
+  <div class="statistics-container">
+    <!-- Buttons for Location Selection -->
+    <div class="location-buttons">
+      <button *ngFor="let location of locations"
+              (click)="onLocationSelect(location)"
+              class="location-btn">
+        {{ location.name }}
+      </button>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="content-area">
+      <!-- Pie Chart Section -->
+      <div class="chart-container pie-chart-container">
+        <h3>Water Quality Distribution</h3>
+        <div *ngIf="hasPieChartData; else noPieData">
+          <canvas baseChart
+                  [data]="pieChartData"
+                  [type]="'pie'">
+          </canvas>
+        </div>
+        <ng-template #noPieData>
+          <div class="no-data-message">No Data Available</div>
+        </ng-template>
+      </div>
+
+      <!-- Line Chart Section -->
+      <div class="chart-container line-chart-container">
+        <h3>Water Quality Over Time</h3>
+        <div *ngIf="hasLineChartData; else noLineData">
+          <canvas baseChart
+                  [data]="lineChartData"
+                  [options]="lineChartOptions"
+                  [type]="'line'">
+          </canvas>
+        </div>
+        <ng-template #noLineData>
+          <div class="no-data-message">No Data Available</div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,99 @@
+// Variables for colors
+$primary-color: #007bff;
+$primary-dark-color: #0056b3;
+$primary-border-color: #004085;
+$card-shadow-color: rgba(0, 0, 0, 0.1);
+
+// Card styling
+.card {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px $card-shadow-color;
+
+  &-header {
+    background-color: $primary-color;
+    color: white;
+    font-weight: bold;
+    font-size: 1.25rem;
+  }
+
+  &-body {
+    padding: 1.5rem;
+    background-color: rgb(255 0 24);
+    color: white;
+  }
+}
+
+// Input group styling
+.input-group {
+  max-width: 500px;
+  margin-bottom: 20px;
+}
+
+// Button styling
+.btn-primary {
+  background-color: $primary-color;
+  border-color: $primary-color;
+
+  &:hover {
+    background-color: $primary-dark-color;
+    border-color: $primary-border-color;
+  }
+}
+
+// Table styling
+.table {
+  margin-top: 20px;
+
+  thead {
+    border-radius: 20px;
+    th {
+      text-align: center;
+      background-color: rgb(255 0 24);
+      color: white;
+    }
+  }
+
+  tbody {
+    tr {
+      td {
+        &.badge {
+          font-size: 0.9em;
+          padding: 0.5rem;
+        }
+      }
+    }
+  }
+}
+
+// Badge colors based on status
+.badge {
+  &.bg-danger {
+    background-color: #dc3545;
+  }
+
+  &.bg-success {
+    background-color: #28a745;
+  }
+
+  &.bg-warning {
+    background-color: #ffc107;
+    color: #212529; // Dark text for contrast
+  }
+}
+
+// Responsive table container
+.table-responsive {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+// Title styling
+h1 {
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+#prediction {
+  text-align: center;
+}
