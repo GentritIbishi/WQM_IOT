@@ -1,0 +1,27 @@
+temperature: 25.66 Celsius
+ph: 6.5
+flow: 4
+turbidity: 4.2
+latitude: 42.961875
+longitude: 20.570339
+
+temperature: -100 Celsius
+ph: 6.5
+flow: 4
+turbidity: 4.2
+latitude: 42.821412
+longitude: 21.308285
+
+temperature: 23.45 Celsius
+ph: 250
+flow: 0
+turbidity: 4.2
+latitude: 42.961875
+longitude: 20.570339
+
+temperature: 23.45 Celsius
+ph: 250
+flow: 0
+turbidity: -70
+latitude: 42.486777
+longitude: 20.422350

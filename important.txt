@@ -1,0 +1,24 @@
+docker exec -it [container_name_or_id] /bin/sh
+
+kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic your_topic_name --from-beginning
+
+CREATE KEYSPACE IF NOT EXISTS sensor_data WITH replication = {
+  'class': 'SimpleStrategy',
+  'replication_factor': 1  // This is suitable for development but not for production
+};
+
+USE sensor_data;
+
+CREATE TABLE IF NOT EXISTS sensor_data.readings (
+    id UUID PRIMARY KEY,
+    temperature text,
+    ph double,
+    flow int,
+    turbidity double,
+    latitude double,
+    longitude double,
+    address text,
+    timestamp timestamp,
+    prediction int,
+    time_execution bigint
+  );
